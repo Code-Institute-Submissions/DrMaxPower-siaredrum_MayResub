@@ -116,7 +116,7 @@ var colids = 15;
 
 
 
-for(let i = 0; i <= 15; i++) {          
+for(let i = 0; i <= colids; i++) {          
     document.getElementById('kick'+String(i)).addEventListener('click', () => {
         buttonHandler('kick', kickCol, i);
     })
@@ -140,9 +140,28 @@ for(let i = 0; i <= 15; i++) {
 function buttonHandler(soundstring, sound, col) {       
     if(sound[col]) {
         document.querySelector('.'+soundstring+'col'+String(col)).style="border-radius: 0px;";
+        document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "";
         sound[col] = false;
     } else {
         document.querySelector('.'+soundstring+'col'+String(col)).style="border-radius: 50%;";
+        if (soundstring=='kick') {
+            document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "💣";
+        }
+        if (soundstring=='clap') {
+            document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "👏🏽";
+        }
+        if (soundstring=='ohat') {
+            document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "🥂";
+        }
+        if (soundstring=='crash') {
+            document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "👒";
+        }
+        if (soundstring=='arumble') {
+            document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "🌪️";
+        }
+        if (soundstring=='brumble') {
+            document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "🌪️";
+        }
         sound[col] = true;
     }
 }
@@ -197,7 +216,7 @@ function startSeq() {
         runSeq();
     },2000);
 }
-document.getElementById('playbutton').addEventListener('click', () => {
+document.getElementById('play').addEventListener('click', () => {
     playState = !playState;
     if(playState) {
         startSeq();
