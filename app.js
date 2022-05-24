@@ -216,11 +216,14 @@ function startSeq() {
         runSeq();
     },2000);
 }
+
 document.getElementById('play').addEventListener('click', () => {
     playState = !playState;
     if(playState) {
         startSeq();
+        document.querySelector(".fa-play").className = "fas fa-pause";
     } else {
         clearInterval(sequencer);
+        document.querySelector(".fa-pause").className = "fas fa-play";
     }
 });
