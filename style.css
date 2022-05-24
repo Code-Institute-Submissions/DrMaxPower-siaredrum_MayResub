@@ -153,5 +153,22 @@ p {
 @media (max-width: 835px) {
     body {
         transform: rotate(90deg);
+        background-color: #442c18;
+        background-image: none;
     }
+    h1{
+        font-family: sans-serif;
+        color: #3dbc8e;
+        font-size: 1.5rem;
+        height: 10vw;
+        word-spacing: 1em;
+    }
+    .container{
+        width: 100vw;
+        height: 90vw;
+        background-color: darkslategray;
+        box-shadow: none;
+    }
+
+
 }
