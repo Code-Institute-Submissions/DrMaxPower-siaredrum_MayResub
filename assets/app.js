@@ -1,4 +1,4 @@
-//document.addEventListener("DOMContentLoaded", )
+// Global variables
 let sequencer;
 var playState = false;
 var kickCol = {
@@ -109,15 +109,21 @@ var brumbleCol = {
     14: false,
     15: false
 };
-
-var pos;           
-var bpm = 125;    
+var pos;
+// BPM = 120 
+// 2000ms / 16 steps  = 125ms per stepInterval
+// 187.5
+var stepInterval = 125;      
 var colids = 15;
 
 
 
-for(let i = 0; i <= colids; i++) {          
+for(let i = 0; i <= colids; i++) {    
+
+        // concatinate the ID for the targeted button   
     document.getElementById('kick'+String(i)).addEventListener('click', () => {
+
+        // Trigger the function buttonHandler of the rageted button
         buttonHandler('kick', kickCol, i);
     })
     document.getElementById('clap'+String(i)).addEventListener('click', () => {
@@ -137,13 +143,21 @@ for(let i = 0; i <= colids; i++) {
     })
 }
 
-function buttonHandler(soundstring, sound, col) {       
+function buttonHandler(soundstring, sound, col) {
+   
     if(sound[col]) {
-        document.querySelector('.'+soundstring+'col'+String(col)).style="border-radius: 0px;";
+        // If btn is trigged with sound + fx, reset sound and fx  
+
+        document.querySelector('.'+soundstring+'col'+String(col)).
+        style="border-radius: 0px;  box-shadow: none";
         document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "";
         sound[col] = false;
+
     } else {
-        document.querySelector('.'+soundstring+'col'+String(col)).style="border-radius: 50%;";
+        // If btn is not trigged with sound + fx, activate sound and fx
+
+        document.querySelector('.'+soundstring+'col'+String(col)).
+        style="border-radius: 50%; box-shadow: 0rem 0rem 1px 1px rgb(252 233 169 / 20%);";
         if (soundstring=='kick') {
             document.querySelector('.'+soundstring+'col'+String(col)).innerHTML = "💣";
         }
@@ -173,7 +187,11 @@ function runSeq() {
         if(pos < 15) {
             for(let i = 0; i < colids; i++) {
                 if(kickCol[pos] == true) {
+
+                    // Reset Time of the trigged sound in the Sequence
                     document.getElementById('kick').currentTime = 0;
+
+                    //  Play the sound of the activated btn in the Sequence
                     document.getElementById('kick').play();
                 }
                 if(clapCol[pos] == true) {
@@ -189,13 +207,21 @@ function runSeq() {
                     document.getElementById('crash').play();
                 }
                 if(arumbleCol[pos] == true) {
-                    document.getElementById('arumble').currentTime = 0;
+
+                    // Silence  the rumble of the other channel if they interfere
+                    document.getElementById('brumble').currentTime = 1;
+
+                    // Start direction sound is shifted for prefered sound.
+                    document.getElementById('arumble').currentTime = .5;
                     document.getElementById('arumble').play();
                 }
                 if(brumbleCol[pos] == true) {
-                    document.getElementById('brumble').currentTime = 0;     
+                    document.getElementById('arumble').currentTime = 1;
+                    document.getElementById('brumble').currentTime = 0.3;     
                     document.getElementById('brumble').play();
                 }
+
+                // Styling for Sequence speed and position on the top of the synth
                 if(i == pos) {      
                     document.querySelector('.poscol'+String(pos)).style="background-color: yellow;";
                 } else {
@@ -207,17 +233,19 @@ function runSeq() {
             clearInterval(intervalseq);
         }
     }
+    // activate the function stepTime with 125ms stepInterval for every colids in the forloop
     stepTime();
-    intervalseq = setInterval(() => {stepTime()}, bpm);
+    intervalseq = setInterval(() => {stepTime()}, stepInterval);
 }
 function startSeq() {
     runSeq();
     sequencer = setInterval(() => {
         runSeq();
-    },2000);
+    },16*stepInterval);
 }
 
 document.getElementById('play').addEventListener('click', () => {
+    // Target the play btn if the Sequence should play or stop
     playState = !playState;
     if(playState) {
         startSeq();
