@@ -4,9 +4,9 @@ This drum-machine is running in the web-browser making it able to use by almost 
 
 
 
-![Computer](media/images/sia_big.png)
-![Tablet](media/images/tablet.png)
-![Mobile](media/images/mobile.png)
+![Computer](assets/media/images/sia_big.png)
+![Tablet](assets/media/images/tablet.png)
+![Mobile](assets/media/images/mobile.png)
 
 ## Features 
 The drum machine has six channels of sound, four of them is drumsound, two are rumble sound, and one play/pause button.
@@ -23,21 +23,21 @@ Right now it is locked to 120bpm but more features will come in later versions.
 
   - User can se the name of every channel, eatch channel has its own name 
 
-![](media/images/channel.png)
+![](assets/media/images/channel.png)
 
 - __The Sequencer__
 
   - The sequencer a 16 step sequencer and repricent one bar. It is color indicated for visual symetry.
 
-![](media/images/sequence.png)
+![](assets/media/images/sequence.png)
 
 - __The Play/Pause Buttom__
 
   - Click the play buttom to start the sequence
   - If the sequence is running you can pause it by press the pause buttom 
 
-![play](media/images/play.png)
-![pause](media/images/pause.png)
+![play](assets/media/images/play.png)
+![pause](assets/media/images/pause.png)
 
 
 ### Features Left to Implement
