@@ -61,7 +61,7 @@ Hope you find a pattern to groove with and be inspired to dance and make music.
 - HTML
     - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdrmaxpower.github.io%2Fsiaredrum%2F)
 - CSS
-    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+    - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdrmaxpower.github.io%2Fsiaredrum%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)
 - JavaScript
     - No errors were found when passing through the official [Jshint validator](https://jshint.com/)
       - The following metrics were returned: 
