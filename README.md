@@ -4,7 +4,7 @@ This drum machine is running in the web browser making it able to use by almost 
 
 
 ![Computer](assets/media/images/sia_big.png)
-![Tablet & Mobile](assets/media/images/tablet_mobile.png.png)
+![Tablet & Mobile](assets/media/images/tablet_mobile.png)
 
 
 ## Features 
