@@ -2,8 +2,9 @@
 There could never be too many drum machines in the world and maybe just maybe peace will come when everyone has a neighbor with a drum machine.
 This drum machine is running in the web browser making it able to use by almost everyone. If you are a music lover you will see many more web-based music projects on this GitHub.   
 
-
+### Computer view
 ![Computer](assets/media/images/sia_big.png)
+### Tablet & Mobile view
 ![Tablet & Mobile](assets/media/images/tablet_mobile.png)
 
 
@@ -46,20 +47,13 @@ Right now it is locked to 120bpm but more features will come in later versions.
 - volume not fixed
 - no clipping when retriggering rumble sound
 - changing the start position of the rumbling sound
+- visual animations for better experiance
 
 This and more features will be implemented in later updates. 
 ## Testing 
-
-Sia Redrum is a run through the web browser
-
-
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part, you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+Sia Redrum can have a diffrent groove depending on the divice you run it on. Like hardware synthesizer no one a like sounds the same.
+If you let the sequencer run without any sounds playing, then go to another page and then come back, then you will see the sequencer act wild for a while.
+Hope you find a pattern to groove with and be inspired to dance and make music. 
 
 
 ### Validator Testing 
@@ -85,8 +79,8 @@ If this section grows too long, you may want to split it off into a separate fil
 
 - The site was deployed to GitHub pages. The steps to deploy were as follows: 
   - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+  - Go to Pages
+  - publish repository
 
 The live link can be found here - https://drmaxpower.github.io/siaredrum/
 
