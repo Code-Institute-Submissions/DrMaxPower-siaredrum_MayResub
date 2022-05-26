@@ -1,5 +1,6 @@
+/*jshint esversion: 6 */ 
+
 // Global variables
-let sequencer;
 var playState = false;
 var kickCol = {
     0: false,
@@ -112,35 +113,35 @@ var brumbleCol = {
 var pos;
 // BPM = 120 
 // 2000ms / 16 steps  = 125ms per stepInterval
-// 187.5
-var stepInterval = 125;      
+var stepInterval = 125;
 var colids = 15;
+let sequencer;
 
 
 
-for(let i = 0; i <= colids; i++) {    
-
+for (let i = 0; i <= colids; i++) {
         // concatinate the ID for the targeted button   
     document.getElementById('kick'+String(i)).addEventListener('click', () => {
 
-        // Trigger the function buttonHandler of the rageted button
+        // Trigger the function buttonHandler of the selected button
         buttonHandler('kick', kickCol, i);
-    })
+    });
+
     document.getElementById('clap'+String(i)).addEventListener('click', () => {
         buttonHandler('clap', clapCol, i);
-    })
+    });
     document.getElementById('ohat'+String(i)).addEventListener('click', () => {
         buttonHandler('ohat', ohatCol, i);
-    })
+    });
     document.getElementById('crash'+String(i)).addEventListener('click', () => {
         buttonHandler('crash', crashCol, i);
-    })
+    });
     document.getElementById('arumble'+String(i)).addEventListener('click', () => {
         buttonHandler('arumble', arumbleCol, i);
-    })
+    });
     document.getElementById('brumble'+String(i)).addEventListener('click', () => {
         buttonHandler('brumble', brumbleCol, i);
-    })
+    });
 }
 
 function buttonHandler(soundstring, sound, col) {
@@ -186,6 +187,7 @@ function runSeq() {
     function stepTime() {
         if(pos < 15) {
             for(let i = 0; i < colids; i++) {
+
                 if(kickCol[pos] == true) {
 
                     // Reset Time of the trigged sound in the Sequence
@@ -212,7 +214,7 @@ function runSeq() {
                     document.getElementById('brumble').currentTime = 1;
 
                     // Start direction sound is shifted for prefered sound.
-                    document.getElementById('arumble').currentTime = .5;
+                    document.getElementById('arumble').currentTime = 0.5;
                     document.getElementById('arumble').play();
                 }
                 if(brumbleCol[pos] == true) {
@@ -221,7 +223,7 @@ function runSeq() {
                     document.getElementById('brumble').play();
                 }
 
-                // Styling for Sequence speed and position on the top of the synth
+                // Sequencer position indicator 
                 if(i == pos) {      
                     document.querySelector('.poscol'+String(pos)).style="background-color: yellow;";
                 } else {
@@ -233,9 +235,9 @@ function runSeq() {
             clearInterval(intervalseq);
         }
     }
-    // activate the function stepTime with 125ms stepInterval for every colids in the forloop
+    // activate the function stepTime with 125ms stepInterval for every colids in the loop
     stepTime();
-    intervalseq = setInterval(() => {stepTime()}, stepInterval);
+    intervalseq = setInterval(() => {stepTime();}, stepInterval);
 }
 function startSeq() {
     runSeq();
